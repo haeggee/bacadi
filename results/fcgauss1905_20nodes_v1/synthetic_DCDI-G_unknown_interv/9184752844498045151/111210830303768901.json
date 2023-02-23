@@ -99,7 +99,7 @@
         "interv_data": true,
         "bacadi_interv_per_env": 0,
         "bacadi_lambda_regul": 0.3024177179363428,
-        "skip_dibs": false,
+        "skip_bacadi": false,
         "bacadi_n_steps": 2000,
         "bacadi_latent_dim": null,
         "bacadi_rel_init_scale": 1.0,
