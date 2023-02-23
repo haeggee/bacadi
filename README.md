@@ -5,7 +5,7 @@ This is the full Python code for *BaCaDI*, a fully differentiable method for joi
 
 ## Installation
 
-The provided code uses `python` and various libraries, in particular `JAX`. The code was run on Linux and using `anaconda`. Note that it might not work on Mac because of an older Python version (that is not compatible with e.g. Apple Silicon).
+The provided code uses `python` and various libraries, in particular `JAX`. The code was run on Linux (Ubuntu 18.04) and using `anaconda`. Note that it might not work on Mac because of an older Python version (that is not compatible with e.g. Apple Silicon).
 
 To get Conda:
 
@@ -45,14 +45,14 @@ To reproduce all results from the paper and run the code, install the following:
 ## Experiments
 The experiments are launched with the scripts in `eval/`. You can e.g. run 
 ```bash
-python eval/run_experiment.py --n_vars 10 --infer_interv --verbose 1
+python eval/run_experiment.py --n_vars 10 --infer_interv --verbose 1 --joint
 ```
 to launch BaCaDI with unknown interventions on a 10 node linear Gaussian BN with verbose output.
 
 All results in the paper were achieved by a hyperparameter search that was launched via `eval/launch_experiments.py`. For example, to launch BaCaDI with 5 hyperparameter samples (with the search range as defined in the `launch_experiments.py` file) for 10 node linear Gaussian BNs, do
 
 ```bash
-python eval/launch_experiments.py --exp_name <exp_name> --num_seeds_per_hparam 10 --n_vars 20 --num_hparam_samples 5 ---num_cpus 2
+python eval/launch_experiments.py --exp_name <exp_name> --num_seeds_per_hparam 10 --n_vars 20 --num_hparam_samples 5 --num_cpus 2
 ```
 Note that this will launch 50 different async processes in parallel. Results will be written to `results/<exp_name>/`.
 
@@ -66,5 +66,5 @@ Note that the code currently uses Latex which should be installed on your machin
 
 If you wish to reproduce the Figures in the Appendix, simply edit the `plot_from_path.py` file and replace `PLOT_DICTS` with `PLOT_DICTS_APPENDIX` at the beginning of the main loop. These dictionaries defined in `config.py` give the folder in which the corresponding experimental results are contained. By following the directory it is possible to inspect configurations and hyperparameters inside the JSON files.
 
-## NOTE:
+## NOTE
 This code was extended starting from the open source implementation of [DiBS](https://github.com/larslorch/dibs).
