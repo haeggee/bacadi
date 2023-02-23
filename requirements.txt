@@ -1,0 +1,15 @@
+imageio==2.9.0
+jax==0.2.13
+jaxlib==0.1.69
+jupyter==1.0.0
+matplotlib==3.4.3
+pandas==1.4.2
+python-igraph==0.9.6
+tqdm==4.64.0
+scikit-learn==1.0.2
+causaldag==0.1a133
+numpy==1.21.6
+torch==1.11.0
+seaborn
+wandb
+tueplots
